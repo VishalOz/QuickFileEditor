@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
+import java.io.FileWriter;
 
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
@@ -85,7 +86,15 @@ public class Main {
     }
 
     public static void writeFile(String fnl2, String fc2) {
-
+        try {
+            FileWriter filewriter = new FileWriter(fnl2);
+            filewriter.write(fc2);
+            filewriter.close();
+            System.out.println("Successfully wrote to "+ fnl2);
+        }catch (Exception e){
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
     public static void renameFile(String fnl3 , String fr1) {
 
