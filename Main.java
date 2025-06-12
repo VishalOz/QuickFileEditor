@@ -61,26 +61,23 @@ public class Main {
                 default:
                     System.out.println("Invalid input !!! check the Diagram.");
 
-
-
-
             }
         }
 
 
 
     }
-    public static void createFile() {
+    public static void createFile(String fnl1, String fc1 ) {
 
     }
 
-    public static void writeFile() {
+    public static void writeFile(String fnl2, String fc2) {
 
     }
-    public static void renameFile() {
+    public static void renameFile(String fnl3 , String fr1) {
 
     }
-    public static void readFile() {
+    public static void readFile(String fnl4) {
 
     }
 }
