@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
@@ -28,7 +31,7 @@ public class Main {
                     String fnl1 = scanner.nextLine();
                     System.out.println("What you want to write: ");
                     String fc1 = scanner.nextLine();
-                    createFile();
+                    createFile(fnl1, fc1);
                     break;
 
                 case 2:
@@ -36,7 +39,7 @@ public class Main {
                     String fnl2 = scanner.nextLine();
                     System.out.println("What you want to write: ");
                     String fc2 = scanner.nextLine();
-                    writeFile();
+                    writeFile(fnl2, fc2);
                     break;
 
                 case 3:
@@ -44,13 +47,13 @@ public class Main {
                     String fnl3 = scanner.nextLine();
                     System.out.println("What do you want to rename it: ");
                     String fr1 = scanner.nextLine();
-                    renameFile();
+                    renameFile(fnl3, fr1);
                     break;
 
                 case 4:
                     System.out.println("Enter the file name or location: ");
                     String fnl4 = scanner.nextLine();
-                    readFile();
+                    readFile(fnl4);
                     break;
 
                 case 5:
@@ -68,7 +71,17 @@ public class Main {
 
     }
     public static void createFile(String fnl1, String fc1 ) {
-
+        File file = new File(fnl1);
+        try {
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            }else{
+                System.out.println("File already created.");
+            }
+        }catch (Exception e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 
     public static void writeFile(String fnl2, String fc2) {
