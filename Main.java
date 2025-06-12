@@ -100,6 +100,17 @@ public class Main {
 
     }
     public static void readFile(String fnl4) {
-
+        try {
+            File file = new File(fnl4);
+            Scanner reader =  new Scanner(fnl4);
+            while (reader.hasNextLine()) {
+                String data = reader.nextLine();
+                System.out.println(data);
+            }
+            reader.close();
+        }catch (Exception e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 }
