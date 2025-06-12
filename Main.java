@@ -6,7 +6,7 @@ public class Main {
         boolean running = true;
         while(running) {
             System.out.println("|================================================|");
-            System.out.println("                    File Handler                 |");
+            System.out.println("|                  File Handler                  |");
             System.out.println("|================================================|");
             System.out.println("| 1.Create a File                                |");
             System.out.println("| 2.Write on existing File                       |");
@@ -20,6 +20,7 @@ public class Main {
             System.out.println();
             System.out.println("Enter an Option: ");
             option = scanner.nextInt();
+            scanner.nextLine();
 
             switch (option) {
                 case 1:
@@ -79,7 +80,7 @@ public class Main {
     public static void renameFile() {
 
     }
-    public static String readFile() {
+    public static void readFile() {
 
     }
 }
